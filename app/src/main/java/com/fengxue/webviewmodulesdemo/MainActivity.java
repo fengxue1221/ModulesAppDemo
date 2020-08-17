@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.fengxue.common.autoservice.IWebViewService;
 import com.fengxue.webview.WebViewActivity;
+
+import java.util.ServiceLoader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.open_webviewactivity).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, WebViewActivity.class));
+                IWebViewService webviewService = ServiceLoader.load(IWebViewService.class).iterator().next();
+                webviewService.startWebViewActivity(MainActivity.this,"https://www.baidu.com","百度");
             }
         });
     }
