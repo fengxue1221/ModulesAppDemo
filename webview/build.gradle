@@ -28,4 +28,6 @@ android {
 
 dependencies {
     implementation "androidx.appcompat:appcompat:$rootProject.androidXVersion"
+    annotationProcessor rootProject.googleAutoServiceDependency
+    implementation rootProject.googleAutoServiceDependency
 }
