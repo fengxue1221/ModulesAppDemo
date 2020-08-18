@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.fengxue.webview.databinding.ActivityWebviewBinding;
+import com.fengxue.webview.utils.Constants;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -17,6 +18,6 @@ public class WebViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_webview);
         binding.webview.getSettings().setJavaScriptEnabled(true);
-        binding.webview.loadUrl("https://www.baidu.com");
+        binding.webview.loadUrl(getIntent().getStringExtra(Constants.URL));
     }
 }
