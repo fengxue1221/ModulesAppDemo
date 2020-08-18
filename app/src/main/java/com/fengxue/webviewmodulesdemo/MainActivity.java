@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 IWebViewService webviewService = MyServiceLoader.load(IWebViewService.class);
                 if (webviewService != null) {
-                    webviewService.startWebViewActivity(MainActivity.this, "https://www.baidu.com", "百度");
+                    webviewService.startWebViewActivity(MainActivity.this, "https://www.baidu.com", "百度",true);
                 }
             }
         });
